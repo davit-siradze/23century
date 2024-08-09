@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="dino" class="mirror-horizontal"></div>
+        <div id="cloud"></div>
+        <div id="cloud2"></div>
+        <div id="obstacle"></div>
+        <div id="obstacle2" class="hidden"></div> <!-- Added second obstacle -->
+        <div id="score">Okin : 0 </div>
+        <div id="levelDisplay">დონე: 0</div>
+<div id="congratulatoryMessage" class="">
+    <p id="codeMessageCongratulatory"></p> 
+
+    <p>გილოცავთ! თქვენ მოიგეთ 1 შეკვრა ორცხობილა!</p>
+</div>
+
+        <div id="gameOverBox" class="hidden">
+            <p id="gameOverMessage">თამაში დასრულდა <span id="finalScore">0</span></p>
+            <p id="codeMessageGameOver"></p> 
+            <button id="playAgainButton">ითამაშე თავიდან</button>
+        </div>
+
+    </div>
+    <div id="mobileMessageBox" class="hidden">
+        <img src="logo.jpg" alt="logo" class="logoims" width="100%" style="    max-width: 90px; margin-bottom:20px;">
+        <img src="2313685.png" alt="" style="width: 40px;"> 
+        <p>გთხოვთ ამოატრიალოთ მობილური, რადგან უკეთ შეძლოთ თამაში!</p>
+        <button id="startGameButton">დაიწყე თამაში</button>
+    </div>
+    
+
+ 
+    
+    <script src="game.js"></script>
+</body>
+</html>
