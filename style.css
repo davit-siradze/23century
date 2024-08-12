@@ -111,7 +111,7 @@ html, body {
     height: 7vw; /* Responsive height */
     max-width: 60px; /* Maximum size */
     max-height: 60px; /* Maximum size */
-    background-image: url('obstracle1.png'); /* Path to your obstacle image */
+    background-image: url('obstacle1.png'); /* Path to your obstacle image */
     background-size: cover;
 }
 
