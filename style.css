@@ -111,20 +111,20 @@ html, body {
     height: 7vw; /* Responsive height */
     max-width: 60px; /* Maximum size */
     max-height: 60px; /* Maximum size */
-    background-image: url('s1.png'); /* Path to your obstacle image */
+    background-image: url('obstracle1.png'); /* Path to your obstacle image */
     background-size: cover;
 }
 
-#obstacle2 {
+/* #obstacle2 {
     position: absolute;
     bottom: 0;
-    width: 10vw; /* Responsive width */
-    height: 10vw; /* Responsive height */
-    max-width: 80px; /* Maximum size */
-    max-height: 80px; /* Maximum size */
-    background-image: url('s1.png'); /* Path to your obstacle image */
+    width: 10vw; 
+    height: 10vw; 
+    max-width: 80px; 
+    max-height: 80px;
+    background-image: url('s1.png'); 
     background-size: cover;
-}
+} */
 
 /* Hidden class */
 .hidden {
@@ -136,7 +136,7 @@ html, body {
     position: absolute;
     top: 5%;
     left: 5%;
-    font-size: 4.5vw; /* Responsive font size */
+    font-size: 2.5vw; /* Responsive font size */
     color: #fff;
 }
 #levelDisplay{
@@ -244,6 +244,9 @@ html, body {
     .text-game p {
         font-size: 0.9rem; /* Adjust paragraph size for mobile */
     }
+    #score{
+        font-size: 4.5vw;
+    }
 }
 
 /* Tablets and Small Laptops */
@@ -265,11 +268,17 @@ html, body {
     .text-game p {
         font-size: 1rem; /* Maintain paragraph size for tablets */
     }
+    #score{
+        font-size: 4.5vw;
+    }
 }
 @media (max-width: 960px) and (orientation: landscape) {
     #gameContainer {
         height: 100vh; /* Ensure full height */
         margin-top: 0;
+    }
+    #score{
+        font-size: 4.5vw;
     }
 }
 #mobileMessageBox {
