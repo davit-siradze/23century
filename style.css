@@ -271,6 +271,9 @@ html, body {
     #score{
         font-size: 4.5vw;
     }
+    #levelDisplay{
+        font-size: 4.5vw; /* Responsive font size */
+    }
 }
 @media (max-width: 960px) and (orientation: landscape) {
     #gameContainer {
@@ -279,6 +282,9 @@ html, body {
     }
     #score{
         font-size: 4.5vw;
+    }
+    #levelDisplay{
+        font-size: 4.5vw; /* Responsive font size */
     }
 }
 #mobileMessageBox {
