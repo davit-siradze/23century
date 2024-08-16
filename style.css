@@ -105,12 +105,12 @@ html, body {
 /* Obstacle styling */
 #obstacle {
     position: absolute;
-    bottom: 0; /* Adjust position from bottom */
+    bottom: 3px;
     right: 5%;
-    width: 7vw; /* Responsive width */
-    height: 7vw; /* Responsive height */
-    max-width: 60px; /* Maximum size */
-    max-height: 60px; /* Maximum size */
+    width: 7vw;
+    height: 13vw;
+    max-width: 60px;
+    max-height: 88px;
     background-image: url('obstacle1.png'); /* Path to your obstacle image */
     background-size: cover;
 }
@@ -223,8 +223,8 @@ html, body {
 /* Mobile Devices (Portrait) */
 @media (max-width: 480px) {
     #gameContainer {
-        width: 100vw; /* Full width for mobile */
-        height: 100vh; /* Full height for mobile */
+        width: 100vw !important;   /* Full width for mobile */
+        height: 100vh !important; /* Full height for mobile */
     }
     #levelDisplay{
         top: 9%;
@@ -247,15 +247,22 @@ html, body {
     #score{
         font-size: 4.5vw;
     }
+    #obstacle{
+        width: 9vw;
+        height: 16vw;
+    }
 }
 
 /* Tablets and Small Laptops */
 @media (min-width: 481px) and (max-width: 1024px) {
     #gameContainer {
-        width: 100vw;
-        height: 100vh; /* Full height for tablets */
+        width: 100vw !important;
+        height: 100vh !important; /* Full height for tablets */
     }
-    
+    #obstacle{
+        width: 9vw;
+        height: 16vw;
+    }
     .text-game {
         width: 90%; /* Adjust width for tablets */
         padding: 20px; /* Maintain padding for tablets */
@@ -282,6 +289,10 @@ html, body {
     }
     #score{
         font-size: 4.5vw;
+    }
+    #obstacle{
+        width: 9vw;
+        height: 16vw;
     }
     #levelDisplay{
         font-size: 4.5vw; /* Responsive font size */
@@ -339,5 +350,9 @@ html, body {
     #cookieimg201 {
         width: 20px;
         height: 15px;
+    }
+    #obstacle{
+        width: 9vw;
+        height: 16vw;
     }
 }
