@@ -63,23 +63,30 @@ function isMobile() {
 function resizeGameContainer() {
     let viewportWidth = window.innerWidth;
     let viewportHeight = window.innerHeight;
+    let containerWidth = viewportWidth * 0.9; // 90% of viewport width
+    let containerHeight = viewportHeight * 0.8; // Adjusted to 80% of viewport height for better visibility
     
-    gameContainer.style.width = viewportWidth + 'px';
-    gameContainer.style.height = viewportHeight + 'px';
+    gameContainer.style.width = containerWidth + 'px';
+    gameContainer.style.height = containerHeight + 'px';
     
-    // Adjust cloud sizes based on container size if needed
+    // Adjust the game container's position to be centered
+    gameContainer.style.position = 'absolute';
+    gameContainer.style.top = '50%';
+    gameContainer.style.left = '50%';
+    gameContainer.style.transform = 'translate(-50%, -50%)';
+
+    // Adjust cloud sizes based on container size
     let cloudElements = document.querySelectorAll('#cloud, #cloud2');
     cloudElements.forEach(cloud => {
-        cloud.style.width = viewportWidth * 0.3 + 'px'; // Adjust as needed
-        cloud.style.height = viewportHeight * 0.3 + 'px'; // Adjust as needed
+        cloud.style.width = containerWidth * 0.3 + 'px'; // 30% of container width
+        cloud.style.height = containerHeight * 0.3 + 'px'; // 30% of container height
     });
 }
 
-// Add resize event listener
+// Add the resize event listener and call it initially
 window.addEventListener('resize', resizeGameContainer);
-
-// Initial resize
 resizeGameContainer();
+
 function enterFullscreen() {
     if (gameContainer.requestFullscreen) {
         gameContainer.requestFullscreen();
@@ -136,18 +143,14 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Listen for touch events for mobile
 document.addEventListener('touchstart', (e) => {
     e.preventDefault(); // Prevent default touch behavior
     jump();
 }, { passive: false }); // Ensure preventDefault works
 
-// Optional: Listen for touchend to ensure jump response
 document.addEventListener('touchend', (e) => {
-    e.preventDefault(); // Prevent default touch behavior
-    jump();
-}, { passive: false }); // Ensure preventDefault works
-
+    e.preventDefault();
+}, { passive: false });
 // Play again button event listener
 playAgainButton.addEventListener('click', () => {
     resetGame();
@@ -209,7 +212,7 @@ function updateDifficulty() {
 }
 
 function updateGame() {
-    if (gameOver) return; // Skip update if game is over
+    if (gameOver) return;
 
     let containerRect = gameContainer.getBoundingClientRect();
     let dinoRect = dino.getBoundingClientRect();
@@ -219,7 +222,8 @@ function updateGame() {
     if (isJumping || isFalling) {
         dinoVelocity += GRAVITY; // Apply gravity
         dinoBottom += dinoVelocity; // Update vertical position
-        if (dinoBottom <= 0) {
+
+        if (dinoBottom <= 0) { // Ensure dino stays within the bottom boundary
             dinoBottom = 0;
             isJumping = false;
             isFalling = false;
@@ -227,28 +231,30 @@ function updateGame() {
             dinoBottom = containerRect.height - dinoRect.height;
             isFalling = false;
         }
+
         dino.style.bottom = dinoBottom + 'px';
     }
 
-    // Move the obstacle
+    // Obstacle movement and reset logic
     let obstacleRight = parseInt(getComputedStyle(obstacle).right);
     obstacle.style.right = (obstacleRight + obstacleSpeed) + 'px';
-    if (parseInt(getComputedStyle(obstacle).right) > containerRect.width) {
-        obstacle.style.right = -obstacleSpacing + 'px'; // Set new obstacle position
-        score += 10; // Fixed score per obstacle hit
-        scoreDisplay.innerHTML = `Score: ${score}`; // Update score display
+
+    if (obstacleRight > containerRect.width) {
+        obstacle.style.right = -obstacleSpacing + 'px';
+        score += 10;
+        scoreDisplay.innerHTML = `Score: ${score}`;
 
         // Update difficulty
         updateDifficulty();
 
-        // Change obstacle image only if it's different from the last one
+        // Update obstacle image
         let newImage;
         do {
             newImage = OBSTACLE_IMAGES[Math.floor(Math.random() * OBSTACLE_IMAGES.length)];
         } while (newImage === lastObstacleImage);
 
         lastObstacleImage = newImage;
-        obstacle.style.backgroundImage = `url('${lastObstacleImage}')`; // Update the obstacle image
+        obstacle.style.backgroundImage = `url('${lastObstacleImage}')`;
     }
 
     // Collision detection
@@ -256,17 +262,17 @@ function updateGame() {
         dinoRect.right > obstacleRect.left &&
         dinoRect.bottom > obstacleRect.top) {
         gameOver = true;
-        finalScore.innerHTML = `Score: ${score}`; // Update final score display
-        codeMessageGameOver.innerText = `Your code: ${generateCode()}`; // Display the code in the game over box
-        gameOverBox.style.display = 'block'; // Show game over box
+        finalScore.innerHTML = `Score: ${score}`;
+        codeMessageGameOver.innerText = `Your code: ${generateCode()}`;
+        gameOverBox.style.display = 'block';
     }
 
-    // Increase difficulty over time (if needed for levels)
-    difficultyTimer += 20; // Increment the timer by the update interval (20 ms)
+    difficultyTimer += 20;
     if (difficultyTimer >= difficultyIncreaseInterval) {
-        difficultyTimer = 0; // Reset the timer
+        difficultyTimer = 0;
     }
 }
+
 
 // Function to reset the game
 function resetGame() {
