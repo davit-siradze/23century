@@ -6,6 +6,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 #gameContainer {
@@ -19,6 +20,7 @@ html, body {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
     box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    overflow-y: auto;
 }
 #cloud {
     position: absolute;
