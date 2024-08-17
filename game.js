@@ -63,17 +63,23 @@ function isMobile() {
 function resizeGameContainer() {
     let viewportWidth = window.innerWidth;
     let viewportHeight = window.innerHeight;
-    let containerWidth = viewportWidth * 0.9; // 90% of viewport width
-    let containerHeight = viewportHeight * 0.8; // Adjusted to 80% of viewport height for better visibility
     
+    // Set the container dimensions to fit better on mobile devices
+    let containerWidth = viewportWidth * 0.9; // 90% of viewport width
+    let containerHeight = Math.min(viewportHeight * 0.6, 400); // Adjusted to 60% of viewport height or max 400px
+
     gameContainer.style.width = containerWidth + 'px';
     gameContainer.style.height = containerHeight + 'px';
     
-    // Adjust the game container's position to be centered
+    // Center the game container
     gameContainer.style.position = 'absolute';
     gameContainer.style.top = '50%';
     gameContainer.style.left = '50%';
     gameContainer.style.transform = 'translate(-50%, -50%)';
+
+    // Adjust the position of the Dino within the game container
+    dino.style.bottom = '0px';
+    dino.style.left = '10%';
 
     // Adjust cloud sizes based on container size
     let cloudElements = document.querySelectorAll('#cloud, #cloud2');
@@ -86,6 +92,7 @@ function resizeGameContainer() {
 // Add the resize event listener and call it initially
 window.addEventListener('resize', resizeGameContainer);
 resizeGameContainer();
+
 
 function enterFullscreen() {
     if (gameContainer.requestFullscreen) {
