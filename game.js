@@ -31,8 +31,8 @@ const OBSTACLE_IMAGES = [
     'img/obstacle1.png',
     'img/obstacle2.png',
     'img/obstacle3.png',
-    'img/obstacle1.png',
-    'img/obstacle3.png'
+    'img/obstacle4.png',
+    'img/obstacle5.png'
 ];
 
 let isJumping = false;
