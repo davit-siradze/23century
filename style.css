@@ -223,7 +223,7 @@ html, body {
 @media (max-width: 480px) {
     #gameContainer {
         width: 100vw !important;   /* Full width for mobile */
-        height: 80vh !important; /* Full height for mobile */
+        height: 85vh !important; /* Full height for mobile */
     }
     #levelDisplay{
         top: 9%;
@@ -256,7 +256,7 @@ html, body {
 @media (min-width: 481px) and (max-width: 1024px) {
     #gameContainer {
         width: 100vw !important;
-        height: 80vh !important; /* Full height for tablets */
+        height: 85vh !important; /* Full height for tablets */
     }
     #obstacle{
         width: 9vw;
@@ -283,7 +283,7 @@ html, body {
 }
 @media (max-width: 960px) and (orientation: landscape) {
     #gameContainer {
-        height: 80vh; /* Ensure full height */
+        height: 85vh; /* Ensure full height */
         margin-top: 0;
     }
     #score{
