@@ -281,9 +281,14 @@ html, body {
         font-size: 4.5vw; /* Responsive font size */
     }
 }
+@media (max-width: 560px) and (orientation: landscape){
+    #gameContainer{
+        height:79vh !important
+    }
+}
 @media (max-width: 960px) and (orientation: landscape) {
     #gameContainer {
-        height: 81vh !important; /* Ensure full height */
+        height: 79vh !important; /* Ensure full height */
         margin-top: 0;
     }
     #score{
