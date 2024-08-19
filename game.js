@@ -206,7 +206,7 @@ function updateDifficulty() {
         JUMP_VELOCITY = DIFFICULTY_LEVELS[currentLevel].jumpVelocity;
         difficultyIncreaseInterval = 2000 / (currentLevel + 1); // Increase difficulty more often
         obstacleSpacing = DIFFICULTY_LEVELS[currentLevel].obstacleSpacing; // Update spacing
-        levelDisplay.innerText = `Level: ${currentLevel}`; // Update level display
+        levelDisplay.innerText = `დონე: ${currentLevel}`; // Update level display
         console.log(`Level Up! Current Level: ${currentLevel}`);
         
         // Check if player has reached level 10
@@ -249,7 +249,7 @@ function updateGame() {
     if (obstacleRight > containerRect.width) {
         obstacle.style.right = -obstacleSpacing + 'px';
         score += 10;
-        scoreDisplay.innerHTML = `Score: ${score}`;
+        scoreDisplay.innerHTML = `Okin's: ${score}`;
 
         // Update difficulty
         updateDifficulty();
@@ -269,8 +269,8 @@ function updateGame() {
         dinoRect.right > obstacleRect.left &&
         dinoRect.bottom > obstacleRect.top) {
         gameOver = true;
-        finalScore.innerHTML = `Score: ${score}`;
-        codeMessageGameOver.innerText = `Your code: ${generateCode()}`;
+        finalScore.innerHTML = `Okin's: ${score}`;
+        codeMessageGameOver.innerText = `თქვენი კოდი: ${generateCode()}`;
         gameOverBox.style.display = 'block';
     }
 
@@ -285,7 +285,7 @@ function updateGame() {
 function resetGame() {
     gameOver = false;
     score = 0;
-    scoreDisplay.innerHTML = `Score: 0`; // Reset score display
+    scoreDisplay.innerHTML = `Okin's: 0`; // Reset score display
     obstacle.style.right = -obstacleSpacing + 'px'; // Reset obstacle position
     lastObstacleImage = null; // Reset last image to ensure a new one is picked
     dinoBottom = 0;
@@ -297,7 +297,7 @@ function resetGame() {
     obstacleSpeed = DIFFICULTY_LEVELS[0].speed;
     JUMP_VELOCITY = DIFFICULTY_LEVELS[0].jumpVelocity;
     obstacleSpacing = DIFFICULTY_LEVELS[0].obstacleSpacing;
-    levelDisplay.innerText = `Level: ${currentLevel}`;
+    levelDisplay.innerText = `დონე: ${currentLevel}`;
     gameOverBox.style.display = 'none'; // Hide game over box
     congratulatoryMessageBox.classList.add('hidden'); // Hide the congratulatory message
 }
