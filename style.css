@@ -7,7 +7,11 @@ html, body {
     width: 100%;
     font-family: Arial, sans-serif;
 }
-
+.ringscros{
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+}
 #gameContainer {
     position: relative;
     width: 100vw !important; /* Full width */
@@ -80,12 +84,21 @@ html, body {
     position: absolute;
     bottom: 0; /* Adjust position from bottom */
     left: 5%;
-    width: 20vw; /* Responsive width */
-    height: 25vw; /* Responsive height */
-    max-width: 60px; /* Maximum size */
-    max-height: 90px; /* Maximum size */
+    width: 30vw;
+    height: 35vw;
+    max-width: 63px;
+    max-height: 105px;
     background-image: url('1-1.png'); /* Path to your dino image */
     background-size: cover;
+}
+.logo-cont{
+    position: relative;
+}
+.logo-cont img {
+    width: 10%;
+    position: absolute;
+    /* left: 0%; */
+    right: 2%;
 }
 /* Horizontal mirror effect */
 .mirror-horizontal {
@@ -225,10 +238,15 @@ html, body {
         width: 100vw !important;   /* Full width for mobile */
         height: 81vh !important; /* Full height for mobile */
     }
+    .ringscros{
+            width: 15px;
+            height: 15px;
+            vertical-align: bottom;
+    }
     #levelDisplay{
-        top: 9%;
+        top: 10%;
         left: 5%;
-        font-size: 4.5vw; /* Responsive font size */
+        font-size: 3.5vw; /* Responsive font size */
         color: #fff;
     }
     .text-game {
@@ -244,7 +262,7 @@ html, body {
         font-size: 0.9rem; /* Adjust paragraph size for mobile */
     }
     #score{
-        font-size: 4.5vw;
+        font-size: 3.5vw;
     }
     #obstacle{
         width: 9vw;
@@ -254,6 +272,11 @@ html, body {
 
 /* Tablets and Small Laptops */
 @media (min-width: 481px) and (max-width: 1024px) {
+    .ringscros {
+        width: 22px;
+        height: 22px;
+        vertical-align: bottom;}
+
     #gameContainer {
         width: 100vw !important;
         height: 81vh !important; /* Full height for tablets */
@@ -275,10 +298,11 @@ html, body {
         font-size: 1rem; /* Maintain paragraph size for tablets */
     }
     #score{
-        font-size: 4.5vw;
+        font-size: 3.5vw;
     }
     #levelDisplay{
-        font-size: 4.5vw; /* Responsive font size */
+        font-size: 3.5vw; /* Responsive font size */
+        top: 12%;
     }
 }
 @media (max-width: 560px) and (orientation: landscape){
@@ -292,14 +316,14 @@ html, body {
         margin-top: 0;
     }
     #score{
-        font-size: 4.5vw;
+        font-size: 3.5vw;
     }
     #obstacle{
         width: 9vw;
         height: 16vw;
     }
     #levelDisplay{
-        font-size: 4.5vw; /* Responsive font size */
+        font-size: 3.5vw; /* Responsive font size */
     }
 }
 #mobileMessageBox {
