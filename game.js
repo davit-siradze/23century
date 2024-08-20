@@ -253,7 +253,7 @@ function updateGame() {
     if (obstacleRight > containerRect.width) {
         obstacle.style.right = -obstacleSpacing + 'px';
         score += 10;
-        scoreDisplay.innerHTML = `Okin's <img class="ringscros" src="img/ring.png" alt="ringscore">: ${score}`;
+        scoreDisplay.innerHTML = `Okin's : ${score} <img class="head-ring-score" src="img/ring.png" alt="ringscore"> `;
 
         // Update difficulty
         updateDifficulty();
@@ -289,7 +289,7 @@ function updateGame() {
 function resetGame() {
     gameOver = false;
     score = 0;
-    scoreDisplay.innerHTML = `Okin's <img class="ringscros" src="img/ring.png" alt="ringscore">: 0`; // Reset score display
+    scoreDisplay.innerHTML = `Okin's <img class="head-ring-score" src="img/ring.png" alt="ringscore">: 0`; // Reset score display
     obstacle.style.right = -obstacleSpacing + 'px'; // Reset obstacle position
     lastObstacleImage = null; // Reset last image to ensure a new one is picked
     dinoBottom = 0;
