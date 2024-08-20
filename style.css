@@ -11,6 +11,11 @@ html, body {
     width: 30px;
     height: 30px;
     vertical-align: bottom;
+}.head-ring-score{
+    width: auto;
+    position: relative;
+    top: 0.15em;
+    height: 1em;
 }
 #gameContainer {
     position: relative;
@@ -108,12 +113,13 @@ html, body {
     max-height: 133px;
     background-image: url('img/finalhero.png'); /* Path to your dino image */
     background-size: cover;
+    transform: scaleX(1);
 }
 .logo-cont{
     position: relative;
 }
 .logo-cont img {
-    width: 10%;
+    width: 18%;
     position: absolute;
     /* left: 0%; */
     right: 2%;
@@ -328,10 +334,10 @@ html, body {
         font-size: 1rem; /* Maintain paragraph size for tablets */
     }
     #score{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
     }
     #levelDisplay{
-        font-size: 3.5vw; /* Responsive font size */
+        font-size: 2.5vw; /* Responsive font size */
         top: 12%;
     }
 }
@@ -347,14 +353,14 @@ html, body {
         margin-top: 0;
     }
     #score{
-        font-size: 3.5vw;
+        font-size: 2.5vw;
     }
     #obstacle{
         width: 9vw;
         height: 16vw;
     }
     #levelDisplay{
-        font-size: 3.5vw; /* Responsive font size */
+        font-size: 2.5vw; /* Responsive font size */
     }
 }
 #mobileMessageBox {
@@ -418,6 +424,8 @@ html, body {
     #obstacle{
         width: 11vw;
         height: 20vw;
-
+    }
+    .head-ring-score{
+        width: 16px;
     }
 }
