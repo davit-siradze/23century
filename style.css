@@ -29,17 +29,35 @@ html, body {
     top: 10%;
     width: 100px;
     height: 60px;
-    background: url('spaceship.png') no-repeat center center;
+    background: url('img/spaceship.png') no-repeat center center;
     background-size: contain;
     animation: moveClouds 30s linear infinite, rotateCloud 10s linear infinite;
 }
 #cloud2{
     position: absolute;
     top: 10%;
-    width: 100px;
+    width: 80px;
     height: 60px;
-    background: url('spaceship2.png') no-repeat center center;
+    background: url('img/spaceship2.png') no-repeat center center;
     background-size: contain;
+}
+#cloud3 {
+    position: absolute;
+    top: 15%; /* Adjust the vertical position */
+    width: 120px; /* Size of the cloud */
+    height: 80px;
+    background: url('img/spaceship3.png') no-repeat center center; /* Path to the cloud image */
+    background-size: contain;
+    animation: moveClouds3 35s linear infinite; /* Animation with a different speed */
+}
+
+@keyframes moveClouds3 {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 35%;
+    }
 }
 
 #cloud2 {
@@ -85,10 +103,10 @@ html, body {
     bottom: 0; /* Adjust position from bottom */
     left: 5%;
     width: 30vw;
-    height: 35vw;
+    height: 37vw;
     max-width: 63px;
-    max-height: 105px;
-    background-image: url('1-1.png'); /* Path to your dino image */
+    max-height: 133px;
+    background-image: url('img/finalhero.png'); /* Path to your dino image */
     background-size: cover;
 }
 .logo-cont{
@@ -123,7 +141,7 @@ html, body {
     height: 13vw;
     max-width: 60px;
     max-height: 88px;
-    background-image: url('obstacle1.png'); /* Path to your obstacle image */
+    background-image: url('img/obstacle1.png'); /* Path to your obstacle image */
     background-size: cover;
 }
 
@@ -180,10 +198,13 @@ html, body {
 }
 
 #gameOverMessage {
-    margin-bottom: 20px;
+    margin: 0;
     font-size: 1.5rem; /* Responsive font size */
 }
-
+.ring-score{
+    width: 23px;
+    position: relative; top: 0.15em; height: 1em;
+}
 /* Play Again button styling */
 #playAgainButton {
     padding: 10px 20px;
@@ -234,6 +255,13 @@ html, body {
 
 /* Mobile Devices (Portrait) */
 @media (max-width: 480px) {
+    #congratulatoryMessage{
+        width: 200px;
+    }
+    .ring-score{
+        width: 25px;
+        height: 1.1em;
+    }
     #gameContainer {
         width: 100vw !important;   /* Full width for mobile */
         height: 81vh !important; /* Full height for mobile */
@@ -265,13 +293,15 @@ html, body {
         font-size: 3.5vw;
     }
     #obstacle{
-        width: 9vw;
-        height: 16vw;
+        width: 11vw;
+        height: 20vw;
+
     }
 }
 
 /* Tablets and Small Laptops */
 @media (min-width: 481px) and (max-width: 1024px) {
+    
     .ringscros {
         width: 22px;
         height: 22px;
@@ -309,6 +339,7 @@ html, body {
     #gameContainer{
         height:79vh !important
     }
+
 }
 @media (max-width: 960px) and (orientation: landscape) {
     #gameContainer {
@@ -340,7 +371,10 @@ html, body {
     flex-direction: column;
     align-items: center;
 }
-
+.gameoverlogo{
+    width: 25%;
+    max-width: 100px;
+}
 
 #mobileMessageBox.hidden {
     display: none;
@@ -351,7 +385,6 @@ html, body {
 }
 
 #congratulatoryMessage {
-    display: none; /* Hidden by default */
     position: absolute; /* Position it as needed */
     top: 50%; /* Center it vertically */
     left: 50%; /* Center it horizontally */
@@ -360,11 +393,14 @@ html, body {
     color: #fff; /* White text */
     padding: 20px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears on top */
+    text-align: center;
 }
 
 #congratulatoryMessage.hidden {
     display: none; /* Ensure it's hidden when not needed */
 }
+
 #codeMessage {
     margin-top: 10px;
     font-weight: bold;
@@ -380,7 +416,8 @@ html, body {
         height: 15px;
     }
     #obstacle{
-        width: 9vw;
-        height: 16vw;
+        width: 11vw;
+        height: 20vw;
+
     }
 }
