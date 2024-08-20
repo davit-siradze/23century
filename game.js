@@ -41,7 +41,7 @@ let score = 0;
 let obstacleSpeed = DIFFICULTY_LEVELS[0].speed; // Initial speed of the obstacle
 let gameOver = false; // Flag to track game state
 
-const GRAVITY = -0.6; // Gravity effect
+const GRAVITY = -0.489; // Gravity effect
 let JUMP_VELOCITY = DIFFICULTY_LEVELS[0].jumpVelocity; // Initial jump velocity
 let obstacleSpacing = DIFFICULTY_LEVELS[0].obstacleSpacing; // Initial obstacle spacing
 
